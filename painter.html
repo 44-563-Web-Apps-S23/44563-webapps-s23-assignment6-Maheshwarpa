@@ -35,5 +35,31 @@ function checkPainter(){
     }  
     }
 </script>
+ <div class="container-fluid">
+<img src="peonies.jpg" width="100" height="100" onclick="selectImage()" id="img1">
+<script>
+var useImage =1
+function selectImage(){
+    switch(useImage){
+        case 1:
+            document.getElementById("img1").src="peonies.jpg"; 
+             
+             useImage=useImage +1;
+             break;
+        case 2:
+        document.getElementById("img1").src="ns.jpg"; 
+            
+            useImage=useImage +1;
+            break;
+        case 3:
+        document.getElementById("img1").src="MG.jpg"; 
+            
+            useImage=1;
+            break;
+
+    }
+}
+</script>
+ </div>
 </body>
 </html> 
