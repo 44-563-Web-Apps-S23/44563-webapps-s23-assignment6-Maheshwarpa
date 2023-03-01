@@ -14,12 +14,13 @@
     <label for="form1_nick">Guess the painter</label>
     <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
 
-    <input type="button" onclick="checkPainter()" value="Check the guess">
+    <input type="button" onclick="checkPainter()" value="Check the guess" id ="btn">
 </form>
 <p id="result">This text will be replaced </p>
 <script> 
 var good=0
 var oops=0
+var count=0
 function checkPainter(){
     value1=document.getElementById("form1_age").value
     value2=document.getElementById("form1_nick").value
@@ -29,10 +30,23 @@ function checkPainter(){
         result.innerHTML="Good count is :"+good    
     }
     else{
-        oops=oops+1
-        alert("Sorry")
-        result.innerHTML="Oops count is :"+oops
+        
+        count+=1
+        if(count>10){
+            document.getElementById("btn").onclick=display()
+        }
+        else{
+            oops=oops+1
+            alert("Sorry")
+            result.innerHTML="Oops count is :"+oops
+        }
+        
     }  
+    }
+
+    function display()
+    {
+        alert("Sorry, ran out of guesses")
     }
 </script>
  <div class="container-fluid">
@@ -42,24 +56,21 @@ var useImage =1
 function selectImage(){
     switch(useImage){
         case 1:
-            document.getElementById("img1").src="peonies.jpg"; 
-             
+            document.getElementById("img1").src="peonies.jpg";            
              useImage=useImage +1;
              break;
         case 2:
-        document.getElementById("img1").src="ns.jpg"; 
-            
+        document.getElementById("img1").src="ns.jpg";            
             useImage=useImage +1;
             break;
         case 3:
-        document.getElementById("img1").src="MG.jpg"; 
-            
+        document.getElementById("img1").src="MG.jpg";           
             useImage=1;
             break;
-
     }
 }
 </script>
  </div>
+
 </body>
 </html> 
