@@ -16,39 +16,20 @@
 <h2>Maheshwar Punyam Anand shows currency conversions</h2>
 
     <form>
-    <label for="form1_age">Enter base amount </label>
+    <label for="form1">Enter base amount </label>
     <input type ="number" id="form1" name="form1_age" min=10 max=50 step=2 value=50> <br>
-    <br>
-    <label for="form1_nick">Enter the conversion rate</label>
+    
+    <label for="form2">Enter the conversion rate</label>
     <input type ="number" id="form2" name="form1_age" min=10 max=50 step=2 value=35> <br>
-    <br>
-    <input type="button" class="btn btn-success" onclick="convert()" value="Show conversions">
+    
+    <input type="button" onclick="convert()" value="Show conversions">
 
     </form>
 
 
 <p id="result">This number will be replaced </p>
 
-<script> 
-function convert(){
-    console.log("Getting currency values")
-    value1 = document.getElementById("form1").value
-    value2 = document.getElementById("form2").value
-    var toShow = "";
-    var multiply = 1;
-    for(var i=0;i<5;i++) {
-        let res=multiply*value2*value1;
-        res=Math.round(res * 10) / 10;
-        
-        toShow+= " "+value1+" value is "+res+";"
-        multiply*=2;
-    }
-    for(var i=value1;i<value1+5;i=i*2){
-        
-    }
-    document.getElementById("result").innerHTML="Conversion are :"+toShow    
-}
-</script>
+
 <div class="container-fluid">
 <form>
     
